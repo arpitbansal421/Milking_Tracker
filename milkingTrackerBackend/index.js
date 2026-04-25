@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./Database/db')
@@ -5,8 +6,8 @@ const router = require('./API/Routes/routes')
 const authRoutes = require('./API/Routes/authRouter')
 const cors =require('cors')
 const protect =require('./Middleware/authMiddleware')
-dotenv.config({ path: './config/.env' });
 
+dotenv.config({ path: path.resolve(__dirname, 'config', '.env') });
 
 const app = express();
 app.use(express.json());
