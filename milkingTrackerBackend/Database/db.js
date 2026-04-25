@@ -1,7 +1,7 @@
 const db = require('mongoose');
 const connectDB=async()=>{
     try{
-        await db.connect(process.env.db_uri, {
+        await db.connect(process.env.MONGO_URI, {
             serverSelectionTimeoutMS: 10000,
             socketTimeoutMS: 45000,
             maxPoolSize: 10,
